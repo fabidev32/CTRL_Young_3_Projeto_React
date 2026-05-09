@@ -1,4 +1,4 @@
-import "./produto.css"
+import "./jogo.css"
 
 export default function Jogo({jogo}) {
   return (
