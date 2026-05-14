@@ -1,8 +1,8 @@
-import Lista_De_Jogos from "./componentes/cadastra_jogo"
+import CadastrarJogo from "./componentes/cadastrar_jogo/cadastrar_jogo"
 
 function App() {
   return (
-    <Lista_De_Jogos></Lista_De_Jogos>
+    <CadastrarJogo></CadastrarJogo>
   );
 }
 
