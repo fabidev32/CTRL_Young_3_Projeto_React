@@ -1,20 +1,10 @@
-// import CadastrarJogo from "./componentes/cadastrar_jogo/cadastrar_jogo"
-
-// function App() {
-//   return (
-//     <CadastrarJogo></CadastrarJogo>
-//   );
-// }
-
-// export default App;
-
-
-import Teste from "./componentes/teste/input"
+import CadastrarJogo from "./componentes/cadastrar_jogo/cadastrar_jogo"
 
 function App() {
   return (
-    <Teste></Teste>
+    <CadastrarJogo></CadastrarJogo>
   );
 }
 
 export default App;
+

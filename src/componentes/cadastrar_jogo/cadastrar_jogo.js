@@ -38,16 +38,6 @@ export default function Listar_Jogos() {
     set_jogos(copiaLista);
   };
 
-  const adicionarAosFavoritos = (indice) => {
-    const jogoSelecionado = jogos[indice];
-    setFavoritos([...favoritos, jogoSelecionado]);
-  };
-  const removerDosFavoritos = (indice) => {
-    const copiaLista = [...favoritos];
-    copiaLista.splice(indice, 1);
-    setFavoritos(copiaLista);
-  };
-
   return (
     <section class="container_formulario">
       <div class="div_formulario">
@@ -82,8 +72,6 @@ export default function Listar_Jogos() {
               indice={indice}
               seFavorito={false}
               removerJogo={removerJogo}
-              adicionarAosFavoritos={adicionarAosFavoritos}
-              removerDosFavoritos={removerDosFavoritos}
             ></Jogo>
           ))}
         </div>
@@ -95,8 +83,6 @@ export default function Listar_Jogos() {
               indice={indice}
               seFavorito={true}
               removerJogo={removerJogo}
-              adicionarAosFavoritos={adicionarAosFavoritos}
-              removerDosFavoritos={removerDosFavoritos}
             ></Jogo>
           ))}
         </div>

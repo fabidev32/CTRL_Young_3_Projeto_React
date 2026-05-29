@@ -5,8 +5,6 @@ export default function Jogo({
   indice,
   removerJogo,
   seFavorito,
-  adicionarAosFavoritos,
-  removerDosFavoritos,
 }) {
   return (
     <div className="div_jogo">
@@ -19,15 +17,6 @@ export default function Jogo({
         alt="Imagem do meu card de jogo"
       />
       <button onClick={() => removerJogo(indice)}></button>
-      {seFavorito ? (
-        <button onClick={() => removerDosFavoritos(indice)}>
-          Remover dos Favoritos
-        </button>
-      ) : (
-        <button onClick={() => adicionarAosFavoritos(indice)}>
-          Favoritar
-        </button>
-      )}
     </div>
   );
 }
