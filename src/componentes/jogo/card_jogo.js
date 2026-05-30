@@ -1,22 +1,19 @@
 import "./card_jogo.css";
 
-export default function Jogo({
-  jogo,
-  indice,
-  removerJogo,
-  seFavorito,
-}) {
+export default function Jogo({ jogo, indice, removerJogo }) {
   return (
-    <div className="div_jogo">
-      <p> {jogo.nome} </p>
-      <p> {jogo.descricao} </p>
-      <p> {jogo.link} </p>
-      <img
-        id="imagem_card"
-        src={jogo.urlImagem}
-        alt="Imagem do meu card de jogo"
-      />
-      <button onClick={() => removerJogo(indice)}></button>
+    <div className="card_jogo">
+      <div>
+        <p> {jogo.nome} </p>
+        <p> {jogo.descricao} </p>
+        <p> {jogo.link} </p>
+        <img
+          id="imagem_card"
+          src={jogo.urlImagem}
+          alt="Imagem do meu card de jogo"
+        />
+        <button onClick={() => removerJogo(indice)}>Remover jogo</button>
+      </div>
     </div>
   );
 }

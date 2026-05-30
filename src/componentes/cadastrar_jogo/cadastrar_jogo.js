@@ -1,7 +1,6 @@
 import "./cadastrar_jogo.css";
 import Imagem from "./../imagem/adicionar_imagem";
 import Jogo from "../jogo/card_jogo";
-import Campo from "../input/campo";
 import { useState } from "react";
 
 export default function Listar_Jogos() {
@@ -10,7 +9,6 @@ export default function Listar_Jogos() {
   const [descricao, set_descricao] = useState("");
   const [link, set_link] = useState("");
   const [imagem, set_imagem] = useState("");
-  const [favoritos, setFavoritos] = useState([]);
 
   // Esta função é chamada pelo Filho
   const salvarURL = (url) => {
@@ -25,7 +23,7 @@ export default function Listar_Jogos() {
       urlImagem: imagem, // Aqui a URL é salva no card
     };
     set_jogos([...jogos, novo_jogo]);
-    // Limpa os campos após adicionar
+    // Limpa os inputs após adicionar
     set_nome("");
     set_descricao("");
     set_link("");
@@ -41,19 +39,19 @@ export default function Listar_Jogos() {
   return (
     <section class="container_formulario">
       <div class="div_formulario">
-        <Campo
+        <input
           type="text"
           placeholder="Digite o nome"
           value={nome}
           onChange={(e) => set_nome(e.target.value)}
         />
-        <Campo
+        <input
           type="text"
           placeholder="Digite a descrição"
           value={descricao}
           onChange={(e) => set_descricao(e.target.value)}
         />
-        <Campo
+        <input
           type="text"
           placeholder="Digite o link do jogo"
           value={link}
@@ -61,31 +59,19 @@ export default function Listar_Jogos() {
         />
         {/* Passamos a função salvarURL para o Filho */}
         <Imagem acessaURL={salvarURL} />
-        <button id="button" onClick={() => novoJogo()}>
+        <button id="cadastrar" onClick={() => novoJogo()}>
           Criar jogo
         </button>
         {/* Mostrar a lista de jogos */}
-        <div>
-          {jogos.map((elemento, indice) => (
-            <Jogo
-              jogo={elemento}
-              indice={indice}
-              seFavorito={false}
-              removerJogo={removerJogo}
-            ></Jogo>
-          ))}
-        </div>
-        {/* Mostrar a lista de favoritos */}
-        <div>
-          {favoritos.map((elemento, indice) => (
-            <Jogo
-              jogo={elemento}
-              indice={indice}
-              seFavorito={true}
-              removerJogo={removerJogo}
-            ></Jogo>
-          ))}
-        </div>
+      </div>
+      <div class="lista_de_jogos">
+        {jogos.map((elemento, indice) => (
+          <Jogo
+            jogo={elemento}
+            indice={indice}
+            removerJogo={removerJogo}
+          ></Jogo>
+        ))}
       </div>
     </section>
   );

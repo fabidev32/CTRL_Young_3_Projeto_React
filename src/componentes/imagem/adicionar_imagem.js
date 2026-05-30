@@ -15,7 +15,7 @@ export default function Adicionar_Imagem({ acessaURL }) {
   return (
     <div className="div_imagem">
       <div>
-        <label htmlFor="input_com_imagem">Selecione uma imagem </label>
+        <label for="input_com_imagem">Selecione uma imagem </label>
         <input 
           type="file" 
           id="input_com_imagem" 
